@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
- 
+import json
  # Getting page HTML through request
 page = requests.get('https://people.com/celebrity/') 
 # Parsing content using beautifulsoup
@@ -8,8 +8,6 @@ soup = BeautifulSoup(page.content, 'html.parser')
  
 # Initialize List of celebraties
 celebraties = []
-
-file = open('celebraties')
 
 links = soup.select("#tax-sc__recirc-list_1-0 a") 
 for anchor in links:
@@ -24,7 +22,8 @@ for anchor in links:
         'writer': writer,
         'imgURL': imgURL
     }
-
     celebraties.append(celebrity)
-
+file = open('celebraties.json', 'w+')
+file.write(json.dumps(celebraties))
+file.close()
 print(celebraties)
