@@ -18,3 +18,13 @@ for anchor in links:
     writer = anchor.select('.card__content .mntl-card__byline')[0]['data-byline']
     imgURL = anchor.select('.loc.card__top .card__media.mntl-universal-image.card__media.universal-image__container .img-placeholder img')[0]['data-src']
     
+    celebrity = {
+        'text': text,
+        'category': category,
+        'writer': writer,
+        'imgURL': imgURL
+    }
+
+    celebraties.append(celebrity)
+
+print(celebraties)
