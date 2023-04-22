@@ -5,7 +5,9 @@
 
 ## Built With
 
-Python
+1. Python
+2. BeautifulSoup
+1. requests
 
 ## Getting Started
 
